@@ -65,10 +65,12 @@ public class LogProducer {
                     LOGGER.debug("Default message");
             }
 
-            try {
-                Thread.sleep(delay);
-            } catch (InterruptedException e) {
-                LOGGER.error(e.getMessage(), e);
+            if (delay > 0) {
+                try {
+                    Thread.sleep(delay);
+                } catch (InterruptedException e) {
+                    LOGGER.error(e.getMessage(), e);
+                }
             }
         }
     }
