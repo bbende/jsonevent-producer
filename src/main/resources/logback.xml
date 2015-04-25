@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+        </encoder>
+    </appender>
+    <appender name="stash" class="net.logstash.logback.appender.LogstashSocketAppender">
+        <host>localhost</host>
+        <port>8881</port>
+    </appender>
+    <root level="all">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="stash" />
+    </root>
+</configuration>

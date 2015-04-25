@@ -45,24 +45,34 @@
     </build>
 
     <dependencies>
-        <!-- SLF4J with Log4J Binding -->
+        <!-- logback classic brings in slf4j, logstash encoder to produce json -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>4.3</version>
+        </dependency>
+
+        <!-- SLF4J with Log4J Binding, JSON layout for logstash integration, UDPAppender is in extras
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.5</version>
         </dependency>
-        <!-- JSON layout for logstash integration -->
         <dependency>
             <groupId>net.logstash.log4j</groupId>
             <artifactId>jsonevent-layout</artifactId>
             <version>1.7</version>
         </dependency>
-        <!-- UDPAppender is in extras -->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>apache-log4j-extras</artifactId>
             <version>1.2.17</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
 </project>
